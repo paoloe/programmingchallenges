@@ -1,4 +1,4 @@
-package main.java.challenges;
+package main.java.challenges.HelloWorld;
 
 class HelloWorld{
 
