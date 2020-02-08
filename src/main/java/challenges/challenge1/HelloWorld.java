@@ -10,5 +10,8 @@ public class HelloWorld {
 
     public static void helloWorld(){
         System.out.print("Hello World!");
+        /**
+         * Branch 2 test!
+         */
     }
 }
