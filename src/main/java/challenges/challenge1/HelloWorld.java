@@ -1,6 +1,6 @@
-package main.java.challenges.HelloWorld;
+package main.java.challenges.challenge1;
 
-class HelloWorld{
+public class HelloWorld {
 
     /**
      * Created 07/02/20
@@ -8,7 +8,7 @@ class HelloWorld{
      *  - Playing around with git directories to make it maintainable!
      */
 
-    public static String helloWorld(){
-        return "HelloWorld!";
+    public static void helloWorld(){
+        System.out.print("Hello World!");
     }
 }

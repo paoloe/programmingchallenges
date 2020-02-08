@@ -1,4 +1,5 @@
 package main.java.challenges;
+import main.java.challenges.challenge1.HelloWorld;
 
 class Main {
 
@@ -8,6 +9,6 @@ class Main {
      * 
      */
     public static void main(String args[]){
-        // Run your code here!
+        HelloWorld.helloWorld();
     }
 }
