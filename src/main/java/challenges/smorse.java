@@ -41,7 +41,7 @@ import java.util.Map;
         String morse = "";
         Map<Character, String> map = new HashMap<>();
         char[] tempArr = input.toCharArray();
-        map.put('a', ".-");
+        decodeMorse(map);
         
         for(char x: tempArr){
             morse = morse.concat(map.get(x));
@@ -56,11 +56,38 @@ import java.util.Map;
      * 
      * Solution:
      *  - so delimeter is a space
-     *  - loop through alphabet (how?)
+     *  - loop through alphabet (how?): https://www.programiz.com/java-programming/examples/display-alphabets
      *  - loop through each character after delimeter store code
+     *  - use temp values to save data to map.put(x, y)
+     *  - reset values of temp values then continue loop
      */
 
-    public static void decodeMorse(){
+    public static void decodeMorse(Map map){
         String morseCode = ".- -... -.-. -.. . ..-. --. .... .. .--- -.- .-.. -- -. --- .--. --.- .-. ... - ..- ...- .-- -..- -.-- --..";
+        char[] tempArr = morseCode.toCharArray();
+        char c;
+        char tempChar;
+        String tempString = "";
+        int res;
+        
+        /**
+         * The logic here does not work...
+         * the loop for the morseCode restarts when it shouldn't...
+         */
+
+        // alphabet loop
+        for(c = 'a'; c <= 'z'; ++c){
+            tempChar = c;
+            for(char x: tempArr){
+                res = Character.compare(x, ' ');
+                if(res ==  0){
+                    break;
+                }
+                else{
+                    tempString = tempString + x;
+                }
+            }
+        map.put(c, tempString);
+        }   
     }
  }
