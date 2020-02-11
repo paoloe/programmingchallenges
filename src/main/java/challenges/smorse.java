@@ -42,7 +42,7 @@ import java.util.Map;
         Map<Character, String> map = new HashMap<>();
         char[] tempArr = input.toCharArray();
         decodeMorse(map);
-        
+
         for(char x: tempArr){
             morse = morse.concat(map.get(x));
         }
@@ -69,6 +69,7 @@ import java.util.Map;
         char tempChar;
         String tempString = "";
         int res;
+        int zCheck;
         
         /**
          * The logic here does not work...
@@ -77,17 +78,21 @@ import java.util.Map;
 
         // alphabet loop
         for(c = 'a'; c <= 'z'; ++c){
+            // tempChar is used 
             tempChar = c;
             for(char x: tempArr){
                 res = Character.compare(x, ' ');
-                if(res ==  0){
-                    break;
+                zCheck = Character.compare(x, 'z');
+                if(res ==  0 || zCheck == 0){
+                    map.put(c, tempString);
+                    tempString = "";
+                    c++;
                 }
                 else{
                     tempString = tempString + x;
                 }
             }
-        map.put(c, tempString);
-        }   
+            map.put(c, tempString);
+        }
     }
  }
