@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - repeatingNums",
+            "request": "launch",
+            "mainClass": "main.java.challenges.repeatingNums",
+            "projectName": "programmingchallenges_cb18ab89"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Main",
             "request": "launch",
             "mainClass": "main.java.challenges.Main",

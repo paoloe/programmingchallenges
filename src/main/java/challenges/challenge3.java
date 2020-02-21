@@ -4,7 +4,7 @@ package main.java.challenges;
 /**
  * Challenge 3 : Find all instances of repeating nums
  * Author: Paolo Espiritu 
- * Source: https://www.reddit.com/r/dailyprogrammer/comments/cmd1hb/20190805_challenge_380_easy_smooshed_morse_code_1/
+ * Source: https://www.reddit.com/r/dailyprogrammer/comments/7eh6k8/20171121_challenge_341_easy_repeating_numbers/
  */
 
 class repeatingNums {
@@ -22,7 +22,7 @@ class repeatingNums {
      *  - If no repeating digits exist, then display 0.
      */
     public static void main(String[] args){
-
+        idea4("11325992321982432123259");
     }
 
     /**
@@ -37,4 +37,60 @@ class repeatingNums {
         String comparator;
     }
 
+    /**
+     * String input
+     * counter that returns at 2
+     * temp string that holds 2 chars at a time
+     * loop through the string and compare temp
+     * deduct one from the returned duplicates as it will iterate over itself once
+     */
+    public static void idea4(String input){
+        char[] inputArr = input.toCharArray();
+        int counter = 0;
+        String temp = "";
+        String comparator = "";
+
+        // this loop saves strings 2 chars at a time
+        for(char x : inputArr){
+            if(counter == 2){
+                counter = 0;
+                return;
+            }
+            else{
+                temp += x;
+                counter++;
+            }
+        }
+
+        // this loop was intended compare temp to the whole string
+        for(char x : inputArr){
+            if(counter == 2){
+                counter = 0;
+                compare(temp, comparator);
+            }
+            else{
+                comparator += x;
+                counter++;
+            }
+        }
+
+        /**
+         * The above isn't going to work as you to store the temp string and along with it
+         * you also need to work include the counter for the occurences of that particular
+         * string!
+         */
+    }
+
+    public static int compare(String obj1, String obj2) {
+        if (obj1 == obj2) {
+            return 0;
+        }
+        if (obj1 == null) {
+            return -1;
+        }
+        if (obj2 == null) {
+            return 1;
+        }
+        return obj1.compareTo(obj2);
+    }
 }
