@@ -22,7 +22,31 @@ class repeatingNums {
      *  - If no repeating digits exist, then display 0.
      */
     public static void main(String[] args){
-        idea4("11325992321982432123259");
+        idea5("11325992321982432123259");
+    }
+
+    /**
+     * Idea 5: Help from Almas
+     *  1) create an upper (length - 1) / lower bound values
+     *  2) create a substring from the lower bound
+     *  3) shift the bounds by 1 and compare it to the original bound
+     *  4) if match save into a map substring as key, value as counter
+     */
+    public static void idea5(String input){
+        int lbound = 0;
+        int ubound = input.length() - 1;
+        String subString = "";
+        String comparator = "";
+
+        while(ubound > lbound){
+            subString = input.substring(lbound, ubound);
+            comparator = input.substring(ubound);
+        
+            ubound--;
+        }
+
+
+        System.out.println(comparator);
     }
 
     /**
